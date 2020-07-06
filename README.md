@@ -1,1 +1,1 @@
-# Make GUI great again!
+# Make GUI Great Again!
