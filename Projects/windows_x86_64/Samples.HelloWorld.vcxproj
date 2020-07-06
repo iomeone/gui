@@ -55,15 +55,15 @@
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\..\..\..\..\Bin\windows_x86_64\</OutDir>
+    <OutDir>..\..\Bin\windows_x86_64\</OutDir>
     <TargetName>Samples.HelloWorld</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
-    <OutDir>..\..\..\..\..\..\Bin\windows_x86_64\</OutDir>
+    <OutDir>..\..\Bin\windows_x86_64\</OutDir>
     <TargetName>Samples.HelloWorld</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\..\..\..\..\Bin\windows_x86_64\</OutDir>
+    <OutDir>..\..\Bin\windows_x86_64\</OutDir>
     <TargetName>Samples.HelloWorld</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -106,19 +106,19 @@
     <None Include="Noesis.ico" />
     <CustomBuild Include="..\..\Data\App.xaml">
       <FileType>Document</FileType>
-      <Command>..\..\..\..\..\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
+      <Command>..\..\ThirdParty\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
       <Message>%(Filename)%(Extension)</Message>
       <Outputs>$(IntermediateOutputPath)%(Filename)%(Extension).bin.h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\Data\MainWindow.xaml">
       <FileType>Document</FileType>
-      <Command>..\..\..\..\..\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
+      <Command>..\..\ThirdParty\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
       <Message>%(Filename)%(Extension)</Message>
       <Outputs>$(IntermediateOutputPath)%(Filename)%(Extension).bin.h</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\Data\Aero Matics Regular.ttf">
       <FileType>Document</FileType>
-      <Command>..\..\..\..\..\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
+      <Command>..\..\ThirdParty\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
       <Message>%(Filename)%(Extension)</Message>
       <Outputs>$(IntermediateOutputPath)%(Filename)%(Extension).bin.h</Outputs>
     </CustomBuild>
