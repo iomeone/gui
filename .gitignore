@@ -32,3 +32,6 @@
 Data/.vs/
 Projects/windows_x86_64/build/Debug/
 Projects/windows_x86_64/.vs/
+*.ilk
+*.pdb
+*.suo
