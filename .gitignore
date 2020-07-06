@@ -34,3 +34,4 @@ Projects/windows_x86_64/.vs/
 *.ilk
 *.pdb
 *.suo
+Data/obj/Debug/
