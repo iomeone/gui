@@ -22,7 +22,7 @@
         <Viewbox>
             <StackPanel Height="100" Width="100">
                 <CheckBox Content="abc1234"  FontFamily="{StaticResource FontAwesome}"/>
-                <CheckBox Content="abc1234"  />
+                <CheckBox Content="abc1234"  FontFamily="FontAwesome"/>
             </StackPanel>
         </Viewbox>
     </Grid>
