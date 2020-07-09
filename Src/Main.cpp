@@ -55,9 +55,10 @@ private:
     {
         EmbeddedXaml xamls[] = 
         {
+	    {"Fonts_xaml", Fonts_xaml }，
             { "App.xaml", App_xaml },
-            { "MainWindow.xaml", MainWindow_xaml },
-			{"Fonts_xaml", Fonts_xaml }
+            { "MainWindow.xaml", MainWindow_xaml }
+			
         };
 
         return *new EmbeddedXamlProvider(xamls);
