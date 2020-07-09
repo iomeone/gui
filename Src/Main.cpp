@@ -16,6 +16,7 @@
 
 #include "App.xaml.bin.h"
 #include "MainWindow.xaml.bin.h"
+#include "Fonts.xaml.bin.h"
 #include "Aero Matics Regular.ttf.bin.h"
 
 #include "fontawesome-webfont.ttf.bin.h"
@@ -55,7 +56,8 @@ private:
         EmbeddedXaml xamls[] = 
         {
             { "App.xaml", App_xaml },
-            { "MainWindow.xaml", MainWindow_xaml }
+            { "MainWindow.xaml", MainWindow_xaml },
+			{"Fonts_xaml", Fonts_xaml }
         };
 
         return *new EmbeddedXamlProvider(xamls);
