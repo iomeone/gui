@@ -35,7 +35,7 @@
     <None Include="..\..\Data\Fonts\fontawesome-webfont.ttf">
       <Filter>Data</Filter>
     </None>
-    <None Include="..\..\Data\Fonts.xaml">
+    <None Include="..\..\Data\Styles\Fonts.xaml">
       <Filter>Data</Filter>
     </None>
   </ItemGroup>
