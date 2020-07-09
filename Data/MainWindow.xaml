@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
         FontFamily="./#Aero Matics"
-        FontSize="24"
+        FontSize="8"
         Background="#FF124C7A"
         Title="NoesisGUI - Hello, World!">
 
@@ -21,7 +21,8 @@
     <Grid>
         <Viewbox>
             <StackPanel Height="100" Width="100">
-                <TextBox Height="30" TextWrapping="Wrap" Text="TextBox"/>
+                <CheckBox Content="abc1234"  FontFamily="{StaticResource FontAwesome}"/>
+                <CheckBox Content="abc1234"  />
             </StackPanel>
         </Viewbox>
     </Grid>

@@ -18,7 +18,7 @@
 #include "MainWindow.xaml.bin.h"
 #include "Aero Matics Regular.ttf.bin.h"
 
-
+#include "fontawesome-webfont.ttf.bin.h"
 using namespace Noesis;
 using namespace NoesisApp;
 
@@ -65,7 +65,8 @@ private:
     {
         EmbeddedFont fonts[] =
         {
-            { "", Aero_Matics_Regular_ttf }
+            { "", Aero_Matics_Regular_ttf },
+			{"",fontawesome_webfont_ttf }
         };
 
         return *new EmbeddedFontProvider(fonts);
