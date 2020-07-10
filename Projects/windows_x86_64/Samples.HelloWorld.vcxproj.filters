@@ -30,6 +30,9 @@
     <CustomBuild Include="..\..\Data\Aero Matics Regular.ttf">
       <Filter>Data</Filter>
     </CustomBuild>
+    <ClCompile Include="..\..\Src\ViewModel.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Data\Styles\Fonts.xaml">
@@ -38,5 +41,10 @@
     <None Include="..\..\Data\Fonts\fontawesome-webfont.ttf">
       <Filter>Data</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\ViewModel.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

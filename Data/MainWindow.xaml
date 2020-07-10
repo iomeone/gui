@@ -26,7 +26,11 @@
                 <!--c++ work-->
                 <CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>
 
+                <Button x:Name="button" Width="100" VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"/>
             </StackPanel>
         </Viewbox>
+
+       
+
     </Grid>
 </Window>

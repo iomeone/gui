@@ -102,6 +102,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\Main.cpp">
     </ClCompile>
+    <ClCompile Include="..\..\Src\ViewModel.cpp" />
     <ResourceCompile Include="resources.rc" />
     <CustomBuild Include="..\..\Data\Styles\Fonts.xaml">
       <FileType>Document</FileType>
@@ -134,6 +135,9 @@
       <Message>%(Filename)%(Extension)</Message>
       <Outputs>$(IntermediateOutputPath)%(Filename)%(Extension).bin.h</Outputs>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Src\ViewModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

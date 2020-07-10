@@ -14,6 +14,11 @@
 #include <NsApp/Application.h>
 #include <NsApp/Window.h>
 
+#include <NsGui/IntegrationAPI.h>
+#include <NsCore/ReflectionImplementEmpty.h>
+
+#include "ViewModel.h"
+
 #include "App.xaml.bin.h"
 #include "MainWindow.xaml.bin.h"
 #include "Fonts.xaml.bin.h"
@@ -36,8 +41,29 @@ class App final: public Application
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class MainWindow final: public Window
 {
+public:
+	MainWindow();
+	void InitializeComponent();
+
+	void OnInitialized(BaseComponent*, const Noesis::EventArgs&);
     NS_IMPLEMENT_INLINE_REFLECTION_(MainWindow, Window, "HelloWorld.MainWindow")
 };
+
+MainWindow::MainWindow()
+{
+	Initialized() += MakeDelegate(this, &MainWindow::OnInitialized);
+	InitializeComponent();
+}
+
+void MainWindow::InitializeComponent()
+{
+	GUI::LoadComponent(this, "MainWindow.xaml");
+}
+
+void MainWindow::OnInitialized(BaseComponent *, const Noesis::EventArgs &)
+{
+	SetDataContext(MakePtr<ViewModel>());
+}
 
 }
 
