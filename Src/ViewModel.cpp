@@ -9,10 +9,9 @@
 #include <NsCore/ReflectionImplement.h>
 #include <NsCore/Log.h>
 
-
 using namespace NoesisApp;
 using namespace HelloWorld;
-
+using namespace Noesis;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ViewModel::ViewModel()
@@ -20,6 +19,20 @@ ViewModel::ViewModel()
     _startCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Start));
     _settingsCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Settings));
     _exitCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Exit));
+}
+
+void HelloWorld::ViewModel::SetInput(const char * value)
+{
+	if (!StrEquals(_input, value))
+	{
+		StrCopy(_input, sizeof(_input), value);
+		OnPropertyChanged("Input");
+	}
+}
+
+const char * HelloWorld::ViewModel::GetInput() const
+{
+	return _input;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,4 +81,7 @@ NS_IMPLEMENT_REFLECTION(ViewModel)
     NsProp("StartCommand", &ViewModel::GetStartCommand);
     NsProp("SettingsCommand", &ViewModel::GetSettingsCommand);
     NsProp("ExitCommand", &ViewModel::GetExitCommand);
+
+	NsProp("Input", &ViewModel::GetInput, &ViewModel::SetInput);
+
 }

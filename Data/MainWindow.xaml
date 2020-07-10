@@ -21,7 +21,7 @@
     </Window.Triggers>
     <Grid>
 
-        
+
         <Viewbox>
             <StackPanel>
                 <StackPanel.Resources>
@@ -30,7 +30,9 @@
                 <!--<StackPanel.Resources>
                     <FontFamily x:Key="FontAwesome">FontAwesome</FontFamily>
                 </StackPanel.Resources>
-                --><!--wpf work--><!--
+                -->
+                <!--wpf work-->
+                <!--
                 <CheckBox Content="&#xf110;"  FontFamily="{StaticResource FontAwesome}"/>-->
                 <!--c++ work-->
                 <!--<CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>-->
@@ -42,11 +44,12 @@
                 <TextBox x:Name="Input" noesis:Text.Placeholder="Enter your string" Text="" />
                 <!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
                 <TextBox Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}"/>
-                
+
+
+                <TextBox x:Name="UserName" noesis:Text.Placeholder="Enter your name" Text="{Binding Input, Mode=TwoWay}" />
+
             </StackPanel>
         </Viewbox>
-
-       
 
     </Grid>
 </Window>
