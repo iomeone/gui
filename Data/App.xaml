@@ -4,10 +4,7 @@
              xmlns:local="clr-namespace:HelloWorld"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/Fonts.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <!--<ResourceDictionary Source="pack://application:,,,/Fonts.xaml" />-->
+        <ResourceDictionary Source="pack://application:,,,/Noesis.GUI.Extensions;component/Theme/NoesisTheme.DarkBlue.xaml" />
     </Application.Resources>
 </Application>

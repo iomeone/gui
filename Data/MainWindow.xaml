@@ -20,23 +20,28 @@
         </EventTrigger>-->
     </Window.Triggers>
     <Grid>
-        <Grid.Resources>
-            <local:UppercaseConverter x:Key="Converter"/>
-        </Grid.Resources>
-        <Viewbox>
-            <StackPanel Height="100" Width="100">
-                <!--wpf work-->
-                <!--<CheckBox Content="&#xf110;"  FontFamily="{StaticResource FontAwesome}"/>-->
-                <!--c++ work-->
-                <CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>
 
-                <Button x:Name="button" Width="100" VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"/>
+        
+        <Viewbox>
+            <StackPanel>
+                <StackPanel.Resources>
+                    <local:UppercaseConverter x:Key="Converter"/>
+                </StackPanel.Resources>
+                <!--<StackPanel.Resources>
+                    <FontFamily x:Key="FontAwesome">FontAwesome</FontFamily>
+                </StackPanel.Resources>
+                --><!--wpf work--><!--
+                <CheckBox Content="&#xf110;"  FontFamily="{StaticResource FontAwesome}"/>-->
+                <!--c++ work-->
+                <!--<CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>-->
+
+                <!--<Button x:Name="button" Width="100" VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"/>-->
 
                 <!--<TextBox noesis:Text.Placeholder="Enter your name"  Enabled="True"  />-->
-                
-                <!--<TextBox x:Name="Input" Text="abc" />-->
-                <TextBox Text="{Binding Input, Mode=TwoWay}" />
-                <TextBlock Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}" Margin="5"/>
+
+                <TextBox x:Name="Input" noesis:Text.Placeholder="Enter your string" Text="" />
+                <!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
+                <TextBox Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}"/>
                 
             </StackPanel>
         </Viewbox>
