@@ -103,13 +103,13 @@
     <ClCompile Include="..\..\Src\Main.cpp">
     </ClCompile>
     <ResourceCompile Include="resources.rc" />
-    <CustomBuild Include="..\..\Data\Fonts\fontawesome-webfont.ttf">
+    <CustomBuild Include="..\..\Data\Styles\Fonts.xaml">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\ThirdParty\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)%(Extension)</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntermediateOutputPath)%(Filename)%(Extension).bin.h</Outputs>
     </CustomBuild>
-    <CustomBuild Include="..\..\Data\Styles\Fonts.xaml">
+    <CustomBuild Include="..\..\Data\Fonts\fontawesome-webfont.ttf">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\ThirdParty\Tools\Bin2h\bin2h.exe "%(FullPath)" &gt; "$(IntermediateOutputPath)%(Filename)%(Extension).bin.h"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)%(Extension)</Message>

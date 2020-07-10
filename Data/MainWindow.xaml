@@ -11,18 +11,21 @@
         Title="NoesisGUI - Hello, World!">
 
     <Window.Resources>
-        <Storyboard x:Key="Intro"/>
+        <!--<Storyboard x:Key="Intro"/>-->
     </Window.Resources>
     <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+        <!--<EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource Intro}"/>
-        </EventTrigger>
+        </EventTrigger>-->
     </Window.Triggers>
     <Grid>
         <Viewbox>
             <StackPanel Height="100" Width="100">
-                <CheckBox Content="abc1234"  FontFamily="{StaticResource FontAwesome}"/>
-                <CheckBox Content="abc1234"  FontFamily="FontAwesome"/>
+                <!--wpf work-->
+                <!--<CheckBox Content="&#xf110;"  FontFamily="{StaticResource FontAwesome}"/>-->
+                <!--c++ work-->
+                <CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>
+
             </StackPanel>
         </Viewbox>
     </Grid>

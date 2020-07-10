@@ -55,7 +55,7 @@ private:
     {
         EmbeddedXaml xamls[] = 
         {
-	    {"Fonts_xaml", Fonts_xaml }，
+			{"Fonts_xaml", Fonts_xaml },
             { "App.xaml", App_xaml },
             { "MainWindow.xaml", MainWindow_xaml }
 			
@@ -82,5 +82,7 @@ int NsMain(int argc, char **argv)
     AppLauncher launcher;
     launcher.SetArguments(argc, argv);
     launcher.SetApplicationFile("App.xaml");
+
+	
     return launcher.Run();
 }
