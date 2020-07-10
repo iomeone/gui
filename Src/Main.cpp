@@ -15,9 +15,12 @@
 #include <NsApp/Window.h>
 
 #include <NsGui/IntegrationAPI.h>
+#include <NsGui/TextBox.h>
+
 #include <NsCore/ReflectionImplementEmpty.h>
 
 #include "ViewModel.h"
+#include "ConverterComponent.h"
 
 #include "App.xaml.bin.h"
 #include "MainWindow.xaml.bin.h"
@@ -31,7 +34,6 @@ using namespace NoesisApp;
 
 namespace HelloWorld
 {
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class App final: public Application
 {
@@ -58,6 +60,13 @@ MainWindow::MainWindow()
 void MainWindow::InitializeComponent()
 {
 	GUI::LoadComponent(this, "MainWindow.xaml");
+
+	Noesis::TextBox* e = FindName<TextBox>("Input");
+	if (e)
+	{
+		//e->SelectAll();
+	}
+	//mSelectorExpanderButton = FindName<ToggleButton>("SelectorExpanderButton");
 }
 
 void MainWindow::OnInitialized(BaseComponent *, const Noesis::EventArgs &)
@@ -75,6 +84,7 @@ private:
     {
         RegisterComponent<HelloWorld::App>();
         RegisterComponent<HelloWorld::MainWindow>();
+		RegisterComponent<HelloWorld::UppercaseConverter>();
     }
 
     Noesis::Ptr<XamlProvider> GetXamlProvider() const override

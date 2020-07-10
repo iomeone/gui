@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
+        xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
         mc:Ignorable="d"
         FontFamily="./#Aero Matics"
         FontSize="8"
@@ -19,6 +20,9 @@
         </EventTrigger>-->
     </Window.Triggers>
     <Grid>
+        <Grid.Resources>
+            <local:UppercaseConverter x:Key="Converter"/>
+        </Grid.Resources>
         <Viewbox>
             <StackPanel Height="100" Width="100">
                 <!--wpf work-->
@@ -27,6 +31,13 @@
                 <CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>
 
                 <Button x:Name="button" Width="100" VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"/>
+
+                <!--<TextBox noesis:Text.Placeholder="Enter your name"  Enabled="True"  />-->
+                
+                <!--<TextBox x:Name="Input" Text="abc" />-->
+                <TextBox Text="{Binding Input, Mode=TwoWay}" />
+                <TextBlock Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}" Margin="5"/>
+                
             </StackPanel>
         </Viewbox>
 
