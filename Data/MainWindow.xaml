@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         FontFamily="./#Aero Matics"
         FontSize="8"
-        Background="#FF124C7A"
+        Background="#FF303030"
         Title="NoesisGUI - Hello, World!">
 
     <Window.Resources>
@@ -23,32 +23,46 @@
 
 
         <Viewbox>
-            <StackPanel>
-                <StackPanel.Resources>
-                    <local:UppercaseConverter x:Key="Converter"/>
-                </StackPanel.Resources>
-                <!--<StackPanel.Resources>
+            <Border x:Name="myBorder" Width="400" Margin="30"
+                    Background="#801C1F21" BorderThickness="1" CornerRadius="5" BorderBrush="#40101611" Padding="5"
+                    HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <local:UppercaseConverter x:Key="Converter"/>
+                    </StackPanel.Resources>
+                    <!--<StackPanel.Resources>
                     <FontFamily x:Key="FontAwesome">FontAwesome</FontFamily>
                 </StackPanel.Resources>
                 -->
-                <!--wpf work-->
-                <!--
+                    <!--wpf work-->
+                    <!--
                 <CheckBox Content="&#xf110;"  FontFamily="{StaticResource FontAwesome}"/>-->
-                <!--c++ work-->
-                <!--<CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>-->
-
-                <!--<Button x:Name="button" Width="100" VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"/>-->
-
-                <!--<TextBox noesis:Text.Placeholder="Enter your name"  Enabled="True"  />-->
-
-                <TextBox x:Name="Input" noesis:Text.Placeholder="Enter your string" Text="" />
-                <!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
-                <TextBox Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}"/>
+                    <!--c++ work-->
+                    <!--<CheckBox Content="&#xf110;"  FontFamily="./#FontAwesome"/>-->
 
 
-                <TextBox x:Name="UserName" noesis:Text.Placeholder="Enter your name" Text="{Binding Input, Mode=TwoWay}" />
 
-            </StackPanel>
+                    <!--<TextBox noesis:Text.Placeholder="Enter your name"  Enabled="True"  />-->
+
+                    <!--<TextBox x:Name="Input" noesis:Text.Placeholder="Enter your string" Text="" />
+                    --><!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
+                    <!--<TextBox Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}"/>-->
+                
+
+                    <TextBox x:Name="UserName" noesis:Text.Placeholder="Enter your name" Text="{Binding UI_Input, Mode=TwoWay}" />
+                    <TextBox x:Name="UserMail" noesis:Text.Placeholder="Enter your Mail" Text="{Binding UI_Mail, Mode=TwoWay}" />
+                    
+                    <PasswordBox x:Name="UserPwrd" noesis:Text.Placeholder="Enter your password"  />
+                    
+
+                    <Button x:Name="button"  VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"
+                            CommandParameter="{Binding   ElementName=UserPwrd}"/>
+
+ 
+                    <TextBox x:Name="Result" Text="{Binding UI_Output, Mode=TwoWay}"/>
+                    
+                </StackPanel>
+            </Border>
         </Viewbox>
 
     </Grid>
