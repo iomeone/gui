@@ -9,8 +9,9 @@
         FontFamily="./#Aero Matics"
         FontSize="8"
         Background="#FF303030"
+  
         Title="GUI">
-
+      <!--d:DataContext="{d:DesignInstance {x:Type local:ViewModel}, IsDesignTimeCreatable=True}"-->
     <Window.Resources>
         <!--<Storyboard x:Key="Intro"/>-->
     </Window.Resources>
@@ -45,25 +46,55 @@
                     <!--<TextBox noesis:Text.Placeholder="Enter your name"  Enabled="True"  />-->
 
                     <!--<TextBox x:Name="Input" noesis:Text.Placeholder="Enter your string" Text="" />
-                    --><!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
+                    -->
+                    <!--<TextBox Text="{Binding Input, Mode=TwoWay}" />-->
                     <!--<TextBox Text="{Binding Text, ElementName=Input, Converter={StaticResource Converter}}"/>-->
-                
+
 
                     <TextBox x:Name="UserName" noesis:Text.Placeholder="Enter your name" Text="{Binding UI_Input, Mode=TwoWay}" />
                     <TextBox x:Name="UserMail" noesis:Text.Placeholder="Enter your Mail" Text="{Binding UI_Mail, Mode=TwoWay}" />
-                    
+
                     <PasswordBox x:Name="UserPwrd" noesis:Text.Placeholder="Enter your password"  />
-                    
+
 
                     <Button x:Name="button"  VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"
                             CommandParameter="{Binding ElementName=UserPwrd}"/>
 
- 
                     <TextBox x:Name="Result" Text="{Binding UI_Output, Mode=TwoWay}"/>
-                    
+
+
+
+
+                    <Grid>
+
+                        <Grid.Resources>
+
+                            <DataTemplate x:Key="TaskTemplate">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle Width="15" Height="10" Fill="{Binding Color}" Stroke="Transparent" 
+                                               StrokeThickness="0" Margin="5, 0, 5, 0" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Name}" Margin="5, 0, 5, 0" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding Scale, StringFormat=P0}" Margin="5, 0, 5, 0" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Pos}" Margin="5, 0, 5, 0" Grid.Column="3"/>
+                                </Grid>
+                            </DataTemplate>
+                        </Grid.Resources>
+                       
+                        <!--DataContext= "{StaticResource TaskTemplate}"-->
+                        <ListBox Height="100"  
+                            ItemsSource="{Binding Players}"
+                            ItemTemplate="{StaticResource TaskTemplate}" />
+                    </Grid>
+
                 </StackPanel>
             </Border>
         </Viewbox>
-
     </Grid>
 </Window>

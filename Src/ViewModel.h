@@ -13,6 +13,9 @@
 
 #include <NsGui/SolidColorBrush.h>
 #include <NsDrawing/Color.h>
+
+#include <NsGui/ObservableCollection.h>
+
 using namespace Noesis;
 namespace HelloWorld
 {
@@ -56,6 +59,8 @@ namespace HelloWorld
 
 		void SetOutput(const char* value);
 
+		ObservableCollection<Player>* GetPlayers() const { return _players; }
+
 	private:
 		char _input[256] = "";
 		char _output[256] = "";
@@ -73,6 +78,8 @@ namespace HelloWorld
 		NoesisApp::DelegateCommand _startCommand;
 		NoesisApp::DelegateCommand _settingsCommand;
 		NoesisApp::DelegateCommand _exitCommand;
+
+		Noesis::Ptr<Noesis::ObservableCollection<Player>> _players;
 
 		NS_DECLARE_REFLECTION(ViewModel, NotifyPropertyChangedBase)
 

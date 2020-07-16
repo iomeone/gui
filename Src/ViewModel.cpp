@@ -14,12 +14,14 @@ using namespace HelloWorld;
 using namespace Noesis;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-ViewModel::ViewModel()
+ViewModel::ViewModel() : _players(MakePtr<ObservableCollection<Player>>())
 {
     _startCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Start));
     _settingsCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Settings));
     _exitCommand.SetExecuteFunc(MakeDelegate(this, &ViewModel::Exit));
 	//StrCopy(_input, 256, "haha");
+	_players->Add(MakePtr<Player>("Player0", Color::Red, 1.0f, "(0,0,0)"));
+
 }
 
 void HelloWorld::ViewModel::SetInput(const char * value)
@@ -84,8 +86,8 @@ void ViewModel::Start(BaseComponent*param_)
 	SetOutput(text);
 
 
-
-
+	_players->Add(MakePtr<Player>("Player0", Color::Red, 1.0f, "(0,0,0)"));
+ 
 	
 	//char * p = Boxing::Unbox<char*>(param_);
 	//NS_UNUSED(p);
@@ -136,5 +138,7 @@ NS_IMPLEMENT_REFLECTION(ViewModel)
 		NsProp("UI_Input", &ViewModel::GetInput, &ViewModel::SetInput);
 
 		NsProp("UI_Output", &ViewModel::GetOutput, &ViewModel::SetOutput);
+
+		NsProp("Players", &ViewModel::GetPlayers);
 
 }
