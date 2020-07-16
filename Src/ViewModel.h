@@ -11,8 +11,35 @@
 #include <NsApp/DelegateCommand.h>
 #include <NsApp/NotifyPropertyChangedBase.h>
 
+#include <NsGui/SolidColorBrush.h>
+#include <NsDrawing/Color.h>
+using namespace Noesis;
 namespace HelloWorld
 {
+
+
+	class Player : public BaseComponent
+	{
+	public:
+		Player() {}
+		Player(const char* name, Color color, float scale, const char* pos) : _name(name), _scale(scale),
+			_pos(pos), _color(MakePtr<SolidColorBrush>(color)) {}
+
+	private:
+		String _name;
+		float _scale;
+		String _pos;
+		Ptr<Brush> _color;
+
+		NS_IMPLEMENT_INLINE_REFLECTION(Player, Noesis::BaseComponent)
+		{
+			NsProp("Name", &Player::_name);
+			NsProp("Scale", &Player::_scale);
+			NsProp("Pos", &Player::_pos);
+			NsProp("Color", &Player::_color);
+		}
+	};
+
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	class ViewModel final : public NoesisApp::NotifyPropertyChangedBase
@@ -46,23 +73,18 @@ namespace HelloWorld
 		NoesisApp::DelegateCommand _startCommand;
 		NoesisApp::DelegateCommand _settingsCommand;
 		NoesisApp::DelegateCommand _exitCommand;
-		//NS_DECLARE_REFLECTION(ViewModel, NotifyPropertyChangedBase, "HelloWorld.ViewModel")
-		//NS_DECLARE_REFLECTION(ViewModel, NotifyPropertyChangedBase)
-		NS_IMPLEMENT_INLINE_REFLECTION(ViewModel, NotifyPropertyChangedBase, "HelloWorld.ViewModel")
-		{
 
-			NsProp("StartCommand", &ViewModel::GetStartCommand);
-			NsProp("SettingsCommand", &ViewModel::GetSettingsCommand);
-			NsProp("ExitCommand", &ViewModel::GetExitCommand);
-
-			NsProp("UI_Input", &ViewModel::GetInput, &ViewModel::SetInput);
-
-			NsProp("UI_Output", &ViewModel::GetOutput, &ViewModel::SetOutput);
+		NS_DECLARE_REFLECTION(ViewModel, NotifyPropertyChangedBase)
 
 
-
-
-		}
+		//NS_IMPLEMENT_INLINE_REFLECTION(ViewModel, NotifyPropertyChangedBase, "HelloWorld.ViewModel")
+		//{
+		//	NsProp("StartCommand", &ViewModel::GetStartCommand);
+		//	NsProp("SettingsCommand", &ViewModel::GetSettingsCommand);
+		//	NsProp("ExitCommand", &ViewModel::GetExitCommand);
+		//	NsProp("UI_Input", &ViewModel::GetInput, &ViewModel::SetInput);
+		//	NsProp("UI_Output", &ViewModel::GetOutput, &ViewModel::SetOutput);
+		//}
 		
 	};
 

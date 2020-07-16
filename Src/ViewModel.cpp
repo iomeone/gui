@@ -126,19 +126,15 @@ void ViewModel::Exit(BaseComponent*)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 NS_BEGIN_COLD_REGION
 
-//NS_IMPLEMENT_REFLECTION(ViewModel)
-//NS_IMPLEMENT_REFLECTION(ViewModel, NotifyPropertyChangedBase, "HelloWorld.ViewModel")
-//{
-//
-//	NsProp("StartCommand", &ViewModel::GetStartCommand);
-//	NsProp("SettingsCommand", &ViewModel::GetSettingsCommand);
-//	NsProp("ExitCommand", &ViewModel::GetExitCommand);
-//
-//	NsProp("UI_Input", &ViewModel::GetInput, &ViewModel::SetInput);
-//
-//	NsProp("UI_Output", &ViewModel::GetOutput, &ViewModel::SetOutput);
-//
-//
-//
-//
-//}
+
+NS_IMPLEMENT_REFLECTION(ViewModel)
+{
+		NsProp("StartCommand", &ViewModel::GetStartCommand);
+		NsProp("SettingsCommand", &ViewModel::GetSettingsCommand);
+		NsProp("ExitCommand", &ViewModel::GetExitCommand);
+
+		NsProp("UI_Input", &ViewModel::GetInput, &ViewModel::SetInput);
+
+		NsProp("UI_Output", &ViewModel::GetOutput, &ViewModel::SetOutput);
+
+}

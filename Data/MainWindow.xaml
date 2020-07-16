@@ -9,7 +9,7 @@
         FontFamily="./#Aero Matics"
         FontSize="8"
         Background="#FF303030"
-        Title="NoesisGUI - Hello, World!">
+        Title="GUI">
 
     <Window.Resources>
         <!--<Storyboard x:Key="Intro"/>-->
@@ -56,7 +56,7 @@
                     
 
                     <Button x:Name="button"  VerticalAlignment="Center" Content="Click me"  Command="{Binding StartCommand}"
-                            CommandParameter="{Binding   ElementName=UserPwrd}"/>
+                            CommandParameter="{Binding ElementName=UserPwrd}"/>
 
  
                     <TextBox x:Name="Result" Text="{Binding UI_Output, Mode=TwoWay}"/>
